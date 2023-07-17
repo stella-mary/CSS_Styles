@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #292929;
+        }
+
+        section {
+            display: flex;
+            width: 100%;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        nav {
+            width: 200px;
+        }
+
+        button {
+            width: 100%;
+            font-size: 18px;
+            padding: 10px 0;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin: 5px 0;
+            border-radius: 3px;
+            opacity: 0;
+            transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-delay: calc(0.1s * var(--i));
+        }
+
+        ul li:nth-child(odd) {
+            background-color: #2e86de;
+            transform: rotateZ(50deg);
+            transform-origin: left center;
+        }
+
+        ul li:nth-child(even) {
+            background-color: #54a0ff;
+            transform: rotateZ(50deg);
+            transform-origin: right center;
+        }
+
+        ul.active li {
+            opacity: 1;
+            transform: rotateZ(0deg);
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 10px;
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+    </script>
+    <title>Drop Down</title>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <button onclick="toggleMenu()"><b>CandorBees</b></button>
+            <ul id="menu">
+
+                <li style="--i:1"><a href=""><b>HTML/CSS</b></a></li>
+                <li style="--i:2"><a href=""><b>JAVASCRIPT</b></a></li>
+                <li style="--i:3"><a href=""><b>NOTE JS</b></a></li>
+                <li style="--i:4"><a href=""><b>SQ LITE</b></a></li>
+                <li style="--i:5"><a href=""><b>MANGO DB</b></a></li>
+
+            </ul>
+        </nav>
+    </section>
+
+</html>
