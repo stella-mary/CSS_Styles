@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+</head>
+
+<body>
+    <form class="calculator" name="calc">
+        <input class="value" type="text" name="text" readonly="" />
+        <span class="num clear" onclick="clearDisplay()">c</span>
+        <span class="num" onclick="handleButtonClick('/')">/</span>
+        <span class="num" onclick="handleButtonClick('*')">*</span>
+        <span class="num" onclick="handleButtonClick('7')">7</span>
+        <span class="num" onclick="handleButtonClick('8')">8</span>
+        <span class="num" onclick="handleButtonClick('9')">9</span>
+        <span class="num" onclick="handleButtonClick('-')">-</span>
+        <span class="num" onclick="handleButtonClick('4')">4</span>
+        <span class="num" onclick="handleButtonClick('5')">5</span>
+        <span class="num" onclick="handleButtonClick('6')">6</span>
+        <span class="num plus" onclick="handleButtonClick('+')">+</span>
+        <span class="num" onclick="handleButtonClick('1')">1</span>
+        <span class="num" onclick="handleButtonClick('2')">2</span>
+        <span class="num" onclick="handleButtonClick('3')">3</span>
+        <span class="num" onclick="handleButtonClick('0')">0</span>
+        <span class="num" onclick="handleButtonClick('00')">00</span>
+        <span class="num" onclick="handleButtonClick('.')">.</span>
+        <span class="num equal" onclick="calculate()">=</span>
+
+    </form>
+</body>
+<script>
+    // Function to handle button clicks and update the display
+    function handleButtonClick(value) {
+        document.calc.text.value += value;
+    }
+
+    // Function to clear the display
+    function clearDisplay() {
+        document.calc.text.value = '';
+    }
+
+    // Function to perform the calculation
+    function calculate() {
+        try {
+            document.calc.text.value = eval(document.calc.text.value);
+        } catch (error) {
+            document.calc.text.value = 'Error';
+        }
+    }
+</script>
+
+</html>
