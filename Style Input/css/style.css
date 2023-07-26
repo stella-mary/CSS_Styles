@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    transition: all .5s ease;
+}
+
+.container {
+    height: 100vh;
+    background: #252526;
+    display: grid;
+    place-content: center;
+    gap: .7rem;
+}
+
+.caja {
+    height: 12rem;
+    width: 12rem;
+    background-color: #41e251;
+    border: 2px solid #41e251;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.texto {
+    width: 12rem;
+    font-size: 1.1rem;
+    padding: .5rem;
+    text-align: center;
+    background-color: #e4e4e4;
+    
+}
