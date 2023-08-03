@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Placeholder Effect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            font-family: 'Hind', sans-serif;
+        }
+
+        body {
+            background-color: #383838;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            flex-flow: column;
+        }
+
+        .form-group {
+            position: relative;
+            margin: 12px 0;
+        }
+
+        .form-group input {
+            padding: 8px 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: #acacac solid 2px;
+            background-color: transparent;
+            color: #eee;
+            transition: 0.15s all ease;
+        }
+
+        .form-group input:focus {
+            border-color: #eee;
+        }
+
+        .form-group input::placeholder {
+            color: transparent;
+        }
+
+        .form-group .form-label {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            font-size: 18px;
+            padding: 0 10px;
+            color: #acacac;
+            pointer-events: none;
+            transition: 0.15s all ease;
+        }
+
+        .form-group input:focus+.form-label,
+        .form-group input:not(:placeholder-shown)+.form-label {
+            transform: translate(5px, -22px);
+            background-color: #383838;
+            font-size: 14px;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="form-group">
+            <input type="text" placeholder="Full Name" />
+            <label class="form-label">Full Name</label>
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="E-mail" />
+            <label class="form-label">E-mail</label>
+        </div>
+    </section>
+</body>
+
+</html>
