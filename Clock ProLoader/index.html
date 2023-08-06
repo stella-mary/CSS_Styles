@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Pre-loader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #292929;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        ul.clock {
+            width: 200px;
+            height: 200px;
+            background-color: #fafafa59;
+            border-radius: 100%;
+            position: relative;
+            list-style: none;
+        }
+
+        ul.clock::before {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background-color: #fff;
+            left: calc(50% - 4px);
+            top: calc(50% - 4px);
+            z-index: 5;
+        }
+
+
+        ul.clock li:first-child {
+            position: absolute;
+            height: 4px;
+            width: 40%;
+            right: 50%;
+            top: calc(50% - 2px);
+            border-radius: 40px;
+            transform-origin: right center;
+            background-color: #fff;
+            animation: ani 1s infinite linear;
+        }
+
+        ul.clock li:last-child {
+            position: absolute;
+            height: 4px;
+            width: 25%;
+            right: 50%;
+            top: calc(50% - 2px);
+            border-radius: 40px;
+            transform-origin: right center;
+            background-color: #fff;
+            animation: ani 15s infinite linear;
+        }
+
+        @keyframes ani {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <ul class="clock">
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+</body>
+
+</html>
